@@ -1,71 +1,88 @@
-# recursive-content-copy README
+# Recursive Content Copy for VS Code
 
-This is the README for your extension "recursive-content-copy". After writing up a brief description, we recommend including the following sections.
+## Overview
+Recursive Content Copy is a Visual Studio Code extension that allows users to copy the content of selected files or folders recursively and output it into the clipboard in a structured JSON format. This extension is particularly useful for developers who need to quickly capture and share file structures and contents.
 
 ## Features
+- Copy contents of single or multiple files
+- Recursively copy contents of folders
+- Output copied content in a structured JSON format
+- Remove duplicate entries automatically
+- Provide temporary status messages for user feedback
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Installation
+1. Open Visual Studio Code
+2. Go to the Extensions view (Ctrl+Shift+X)
+3. Search for "Recursive Content Copy"
+4. Click Install
 
-For example if there is an image subfolder under your extension project workspace:
+Alternatively, you can install it from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=YourPublisherName.recursive-content-copy).
 
-\!\[feature X\]\(images/feature-x.png\)
+## Usage
+1. Select one or more files or folders in the VS Code file explorer
+2. Right-click and select "Copy Contents (Recursive)" from the context menu
+3. The contents will be copied to your clipboard in JSON format
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## JSON Structure
+The copied content will be in the following JSON structure:
+```json
+{
+  "items": [
+    {
+      "type": "file" | "folder",
+      "path": "relative/path/to/item",
+      "content": "file content (only for files)"
+    },
+    ...
+  ],
+  "timestamp": "ISO 8601 timestamp"
+}
+```
 
-## Requirements
+## Development
+### Prerequisites
+- Node.js (v14 or later)
+- npm (v6 or later)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Setup
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/recursive-content-copy.git
+   ```
+2. Install dependencies:
+   ```
+   cd recursive-content-copy
+   npm install
+   ```
 
-## Extension Settings
+### Running Tests
+To run the unit tests:
+```
+npm run test:unit
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+To run the full test suite (including integration tests):
+```
+npm test
+```
 
-For example:
+### Building
+To compile the extension:
+```
+npm run compile
+```
 
-This extension contributes the following settings:
+### Packaging
+To package the extension for publication:
+```
+npm run package
+```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Known Issues
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Support
+If you encounter any problems or have any questions, please [open an issue](https://github.com/yourusername/recursive-content-copy/issues) on our GitHub repository.
