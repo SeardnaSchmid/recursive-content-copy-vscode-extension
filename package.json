@@ -1,0 +1,52 @@
+{
+  "name": "recursive-content-copy-vscode-extension",
+  "displayName": "recursive-content-copy-vscode-extension",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "recursive-content-copy.copy",
+          "group": "clipboard"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "recursive-content-copy.copy",
+        "title": "Copy selected contents (Recursive)"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test:unit": "node src/test/extension.test.ts",
+    "test:app": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/sinon": "^17.0.3",
+    "@types/vscode": "^1.92.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "sinon": "^18.0.0",
+    "typescript": "^5.4.5"
+  }
+}
